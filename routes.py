@@ -1,5 +1,5 @@
 from app import app, db, Lesson, Course
-from flask import request, jsonify, send_file, abort, send_from_directory
+from flask import request, jsonify, send_file, abort, send_from_directory, render_template
 from utils import list_and_register_lessons
 from werkzeug.utils import secure_filename
 import os
@@ -9,7 +9,7 @@ from sqlalchemy.orm import joinedload
 
 @app.route('/')
 def index():
-    return send_from_directory('../front-end/dist', 'index.html')
+    return render_template('index.html')
 
 @app.route('/api/courses', methods=['GET'])
 def list_courses():
