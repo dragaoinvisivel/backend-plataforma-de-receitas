@@ -59,7 +59,7 @@ python app.py
 
 ### 5. Acessar o aplicativo
 
-Uma vez que o servidor Flask estiver em execução, visite o site [Plataforma de Cursos](https://front-plataforma-cursos.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
+Uma vez que o servidor Flask estiver em execução, acesse o http://localhost:5000 no seu navegador ou visite o site [Plataforma de Cursos](https://front-plataforma-cursos.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
 
 Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [[Em Breve]Front-end Plataforma de Cursos](#)
 
