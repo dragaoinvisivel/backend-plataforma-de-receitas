@@ -1,11 +1,14 @@
-from app import app, db, Lesson, Course
+
 from flask import request, jsonify, send_file, abort, send_from_directory, render_template
-from utils import list_and_register_lessons
 from werkzeug.utils import secure_filename
 import os
 from sqlalchemy import event
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import joinedload
+
+from app import app, db, Lesson, Course
+from utils import list_and_register_lessons
+from video_utils import open_video
 
 @app.route('/')
 def index():
@@ -48,6 +51,10 @@ def serve_lesson_content():
 
     if not os.path.exists(path):
         abort(404)
+        
+    if path.lower().endswith(".ts") or path.lower().endswith(".mkv"):
+        open_video(path)
+        return send_from_directory("assets", "video-aviso-reproducao.mp4")      
 
     return send_file(path)
 

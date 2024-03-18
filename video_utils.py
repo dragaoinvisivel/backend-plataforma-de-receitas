@@ -1,5 +1,7 @@
 import subprocess
 import re
+import subprocess
+import os
 
 def get_video_duration_v1(video_path):
     command = ['ffmpeg', '-i', video_path]
@@ -16,3 +18,14 @@ def get_video_duration_v1(video_path):
     except Exception as e:
         print(f"An error occurred: {e}")
         return 0
+    
+def open_video(video_path):
+    if os.path.exists(video_path):
+        print(video_path)
+        try:
+            os.startfile(video_path)
+        except:
+            print("erro ao abrir arquivo")
+        return 
+    
+    print("Caminho do vídeo não encontrado.")
