@@ -61,7 +61,7 @@ python app.py
 
 Uma vez que o servidor Flask estiver em execução, acesse o http://localhost:5000 no seu navegador ou visite o site [Plataforma de Receitas](https://plataforma-de-receitas.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
 
-Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [Front-end Plataforma de Receitas](https://github.com/dragaoinvisivel/front-end-flataforma-de-receitas) 
+Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [Front-end Plataforma de Receitas](https://github.com/dragaoinvisivel/frontend-plataforma-de-receitas) 
 
 ## Contribuindo
 
