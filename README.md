@@ -1,4 +1,4 @@
-# Servidor de Cursos Offline | Projeto Python com SQLite e Flask
+# Servidor de Receitas Offline | Projeto Python com SQLite e Flask
 
 Este é um projeto básico em Python que utiliza SQLite como banco de dados e Flask como framework web. Ele é uma variação do projeto original [platform_course](https://github.com/Alessandro-filho/platform_course) do autor [Alessandro Filho](https://github.com/Alessandro-filho). Todos os créditos pelo projeto original vão para o autor.
 
@@ -59,9 +59,9 @@ python app.py
 
 ### 5. Acessar o aplicativo
 
-Uma vez que o servidor Flask estiver em execução, acesse o http://localhost:5000 no seu navegador ou visite o site [Plataforma de Cursos](https://front-plataforma-cursos.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
+Uma vez que o servidor Flask estiver em execução, acesse o http://localhost:5000 no seu navegador ou visite o site [Plataforma de Cursos](https://plataforma-de-receitas.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
 
-Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [Front-end Plataforma de Cursos](https://github.com/dragaoinvisivel/front-end-flataforma-de-receitas) 
+Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [Plataforma de Receitas](https://github.com/dragaoinvisivel/front-end-flataforma-de-receitas) 
 
 ## Contribuindo
 
