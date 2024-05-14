@@ -17,7 +17,7 @@ Caso não tenha o Python instalado em seu computador você pode instalá-lo segu
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/mosfete/backend-plataforma-de-receitas.git
+git clone https://github.com/dragaoinvisivel/backend-plataforma-de-receitas.git
 cd backend-plataforma-de-receitas
 ```
 
