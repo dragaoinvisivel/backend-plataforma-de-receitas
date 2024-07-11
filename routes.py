@@ -46,8 +46,6 @@ def list_lessons_for_course(course_id):
 @app.route("/serve-content", methods=['GET'])
 def serve_lesson_content():
     path = request.args.get('path')
-    if '..' in path or path.startswith('/'):
-        abort(404)
 
     if not os.path.exists(path):
         abort(404)
