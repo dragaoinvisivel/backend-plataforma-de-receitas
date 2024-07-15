@@ -2,10 +2,21 @@
 
 Este é um projeto básico em Python que utiliza SQLite como banco de dados e Flask como framework web. Ele é uma variação do projeto original [platform_course](https://github.com/Alessandro-filho/platform_course) do autor [Alessandro Filho](https://github.com/Alessandro-filho). Todos os créditos pelo projeto original vão para o autor.
 
-## Configuração e Execução
+# Configuração e Execução
+## 1. Executando com Docker (recomendado)
+Caso você possua Docker instalado em seu sistema, é possível executar o projeto com um único comando. Para instruções sobre como instalar o Docker, visite o [site oficial](https://www.docker.com/products/docker-desktop/).
 
-Siga estas etapas para configurar e executar o projeto localmente:
+Com o Docker instalado, basta executar o seguinte comando:
 
+```docker run --name receitas -p 5050:5050 -v "your-recipies:/data" ghcr.io/ryanrpj/backend-plataforma-de-receitas:latest```
+
+Substitua ```your-recipies``` pelo diretório onde os seus cursos estão localizados. **Todos** os seus cursos devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas cursos_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
+
+Caso seus cursos não estejam todos dentro de um único diretório, crie um diretório e mova-os. Esta é a forma mais simples e recomendada ao executar via Docker.
+
+Se não for viável mover seus arquivos para um único diretório, prossiga com a [execução manual](#2-executando-manualmente). Esta abordagem é mais complexa, porém lhe concede a liberdade de manter seus cursos em diretórios separados em qualquer lugar do seu PC.
+
+## 2. Executando manualmente
 ### AVISO: Instalação do FFmpeg
 
 Antes de continuar com a instalação e configuração do servidor de cursos offline, é necessário ter o FFmpeg instalado em seu sistema. O FFmpeg é uma ferramenta de linha de comando necessária para processamento de áudio e vídeo. Caso você ainda não tenha o FFmpeg instalado, você pode seguir o seguinte tutorial: [Instalando ffmpeg no windows](https://pt.wikihow.com/Instalar-o-FFmpeg-no-Windows).
