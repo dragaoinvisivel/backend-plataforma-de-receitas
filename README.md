@@ -10,7 +10,7 @@ Com o Docker instalado, basta executar o seguinte comando:
 
 ```docker run --name receitas -p 5050:5050 -v "your-recipies:/data" ghcr.io/ryanrpj/backend-plataforma-de-receitas:latest```
 
-Substitua ```your-recipies``` pelo diretório onde suas receitas estão localizadas. **Todas** as seus receitas devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas receitas_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
+Substitua ```your-recipies``` pelo diretório onde suas receitas estão localizadas. **Todas** as suas receitas devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas receitas_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
 
 Caso suas receitas não estejam todos dentro de um único diretório, crie um diretório e mova-os. Esta é a forma mais simples e recomendada ao executar via Docker.
 
