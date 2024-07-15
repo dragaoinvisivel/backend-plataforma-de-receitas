@@ -10,16 +10,16 @@ Com o Docker instalado, basta executar o seguinte comando:
 
 ```docker run --name receitas -p 5050:5050 -v "your-recipies:/data" ghcr.io/ryanrpj/backend-plataforma-de-receitas:latest```
 
-Substitua ```your-recipies``` pelo diretório onde os seus cursos estão localizados. **Todos** os seus cursos devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas cursos_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
+Substitua ```your-recipies``` pelo diretório onde suas receitas estão localizadas. **Todas** as seus receitas devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas receitas_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
 
-Caso seus cursos não estejam todos dentro de um único diretório, crie um diretório e mova-os. Esta é a forma mais simples e recomendada ao executar via Docker.
+Caso suas receitas não estejam todos dentro de um único diretório, crie um diretório e mova-os. Esta é a forma mais simples e recomendada ao executar via Docker.
 
-Se não for viável mover seus arquivos para um único diretório, prossiga com a [execução manual](#2-executando-manualmente). Esta abordagem é mais complexa, porém lhe concede a liberdade de manter seus cursos em diretórios separados em qualquer lugar do seu PC.
+Se não for viável mover seus arquivos para um único diretório, prossiga com a [execução manual](#2-executando-manualmente). Esta abordagem é mais complexa, porém lhe concede a liberdade de manter suas receitas em diretórios separados em qualquer lugar do seu PC.
 
 ## 2. Executando manualmente
 ### AVISO: Instalação do FFmpeg
 
-Antes de continuar com a instalação e configuração do servidor de cursos offline, é necessário ter o FFmpeg instalado em seu sistema. O FFmpeg é uma ferramenta de linha de comando necessária para processamento de áudio e vídeo. Caso você ainda não tenha o FFmpeg instalado, você pode seguir o seguinte tutorial: [Instalando ffmpeg no windows](https://pt.wikihow.com/Instalar-o-FFmpeg-no-Windows).
+Antes de continuar com a instalação e configuração do servidor de receitas offline, é necessário ter o FFmpeg instalado em seu sistema. O FFmpeg é uma ferramenta de linha de comando necessária para processamento de áudio e vídeo. Caso você ainda não tenha o FFmpeg instalado, você pode seguir o seguinte tutorial: [Instalando ffmpeg no windows](https://pt.wikihow.com/Instalar-o-FFmpeg-no-Windows).
 
 ### AVISO: Instalação do Python
 
