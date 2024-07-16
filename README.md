@@ -35,7 +35,7 @@ Com as dependências instaladas, basta executar o servidor:
 
 ## 2. Executando manualmente
 > [!CAUTION]
-> Executar o projeto manualmente envolve o gerenciamento manual das tecnologias e dependências necessárias. Isso pode gerar conflitos, caso você já possua um dos itens aqui listados, porém em versões diferentes.
+> Executar o projeto manualmente envolve o gerenciamento manual das tecnologias e dependências necessárias. Isso pode gerar conflitos, caso você já possua algum dos itens aqui listados, porém em versões diferentes.
 >
 > Somente prossiga com a execução manual caso saiba o que está fazendo.
 ### 1. Ferramentas necessárias
@@ -49,7 +49,7 @@ Ferramenta de linha de comando necessária para processamento de áudio e vídeo
 
 Caso não tenha o Python instalado em seu computador, você pode instalá-lo seguindo o seguinte tutorial: [Instalação do Python](https://tutorial.djangogirls.org/pt/python_installation/).
 
-### 3. Configurar o ambiente virtual (venv)
+### 2. Configurar o ambiente virtual (venv)
 
 Crie um ambiente virtual usando `venv`:
 
@@ -71,7 +71,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 4. Instalar as dependências Python
+### 3. Instalar as dependências Python
 
 Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 
@@ -79,7 +79,7 @@ Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-### 5. Executar o servidor Flask
+### 4. Executar o servidor Flask
 
 ```bash
 python app.py
