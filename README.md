@@ -1,38 +1,55 @@
-# Servidor de Receitas Offline | Projeto Python com SQLite e Flask
-
-Este é um projeto básico em Python que utiliza SQLite como banco de dados e Flask como framework web. Ele é uma variação do projeto original [platform_course](https://github.com/Alessandro-filho/platform_course) do autor [Alessandro Filho](https://github.com/Alessandro-filho). Todos os créditos pelo projeto original vão para o autor.
+# Back-end | Plataforma de Receitas
+> [!NOTE]
+> Este repositório é para desenvolvedores que desejam inspecionar e/ou contribuir para o back-end da [Plataforma de Receitas](https://github.com/dragaoinvisivel/frontend-plataforma-de-receitas).
+>
+> Caso você seja apenas um usuário que deseja executar o projeto em seu computador, visite o [repositório correto](https://github.com/dragaoinvisivel/frontend-plataforma-de-receitas).
 
 # Configuração e Execução
-## 1. Executando com Docker (recomendado)
-Caso você possua Docker instalado em seu sistema, é possível executar o projeto com um único comando. Para instruções sobre como instalar o Docker, visite o [site oficial](https://www.docker.com/products/docker-desktop/).
+> [!NOTE]
+> Ressaltamos novamente que este tutorial de execução é para **desenvolvedores**. Você não irá conseguir utilizar o projeto seguindo os tutoriais abaixo.
 
-Com o Docker instalado, basta executar o seguinte comando:
-
-```docker run --name receitas -p 5050:5050 -v "your-recipies:/data" ghcr.io/ryanrpj/backend-plataforma-de-receitas:latest```
-
-Substitua ```your-recipies``` pelo diretório onde os seus cursos estão localizados. **Todos** os seus cursos devem estar dentro deste diretório. **Certifique-se de que este diretório contém _apenas cursos_, portanto, não inclua diretórios abrangentes como o diretório C: do Windows ou /home do Linux.**
-
-Caso seus cursos não estejam todos dentro de um único diretório, crie um diretório e mova-os. Esta é a forma mais simples e recomendada ao executar via Docker.
-
-Se não for viável mover seus arquivos para um único diretório, prossiga com a [execução manual](#2-executando-manualmente). Esta abordagem é mais complexa, porém lhe concede a liberdade de manter seus cursos em diretórios separados em qualquer lugar do seu PC.
-
-## 2. Executando manualmente
-### AVISO: Instalação do FFmpeg
-
-Antes de continuar com a instalação e configuração do servidor de cursos offline, é necessário ter o FFmpeg instalado em seu sistema. O FFmpeg é uma ferramenta de linha de comando necessária para processamento de áudio e vídeo. Caso você ainda não tenha o FFmpeg instalado, você pode seguir o seguinte tutorial: [Instalando ffmpeg no windows](https://pt.wikihow.com/Instalar-o-FFmpeg-no-Windows).
-
-### AVISO: Instalação do Python
-
-Caso não tenha o Python instalado em seu computador você pode instalá-lo seguindo o seguinte tutorial: [Instalação do Python](https://tutorial.djangogirls.org/pt/python_installation/).
-
-### 1. Clonar o repositório
-
+Comece clonando o repositório:
 ```bash
 git clone https://github.com/dragaoinvisivel/backend-plataforma-de-receitas.git
 cd backend-plataforma-de-receitas
 ```
 
-### 2. Configurar o ambiente virtual (venv)
+Com o repositório clonado, você possui duas opções para executar o servidor:
+- [Executar de forma segura com Docker - Recomendado](#1-executando-com-docker-recomendado)
+- [Executar manualmente - somente para usuários avançados](#2-executando-manualmente)
+
+## 1. Executando com Docker (recomendado)
+Caso você possua Docker instalado em seu sistema, é possível executar o back-end com pouquíssimos comandos. Para instruções sobre como instalar o Docker, visite o [site oficial](https://www.docker.com/products/docker-desktop/).
+
+Com o Docker instalado, basta executar o seguinte comando:
+
+```docker run -it --name receitas-dev -p 9823:9823 -v "./src:/app" python:latest /bin/bash```
+
+Feito isso, você já estará dentro do container com o ambiente de desenvolvimento configurado e pronto para uso. O próximo passo é navegar para o diretório onde se encontra o código fonte, e instalar as dependências do projeto:
+
+```cd /app && pip install -r requirements.txt```
+
+Com as dependências instaladas, basta executar o servidor:
+
+```python app.py```
+
+## 2. Executando manualmente
+> [!CAUTION]
+> Executar o projeto manualmente envolve o gerenciamento manual das tecnologias e dependências necessárias. Isso pode gerar conflitos, caso você já possua um dos itens aqui listados, porém em versões diferentes.
+>
+> Somente prossiga com a execução manual caso saiba o que está fazendo.
+### 1. Ferramentas necessárias
+
+Antes de continuar com a instalação e configuração do projeto, é necessário ter algumas ferramentas instaladas no seu computador. Sem elas, não será possível executar o projeto.
+
+##### FFmpeg
+Ferramenta de linha de comando necessária para processamento de áudio e vídeo. Caso você ainda não tenha o FFmpeg instalado, você pode seguir o seguinte tutorial: [Instalando ffmpeg no Windows](https://pt.wikihow.com/Instalar-o-FFmpeg-no-Windows).
+
+##### Python
+
+Caso não tenha o Python instalado em seu computador, você pode instalá-lo seguindo o seguinte tutorial: [Instalação do Python](https://tutorial.djangogirls.org/pt/python_installation/).
+
+### 3. Configurar o ambiente virtual (venv)
 
 Crie um ambiente virtual usando `venv`:
 
@@ -54,7 +71,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Instalar as dependências
+### 4. Instalar as dependências Python
 
 Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 
@@ -62,17 +79,11 @@ Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-### 4. Executar o servidor Flask
+### 5. Executar o servidor Flask
 
 ```bash
 python app.py
 ```
-
-### 5. Acessar o aplicativo
-
-Uma vez que o servidor Flask estiver em execução, acesse o http://localhost:5050 no seu navegador ou visite o site [Plataforma de Receitas](https://plataforma-de-receitas.vercel.app/) para acessar o aplicativo e consumir a API em seu próprio computador. Caso deseje alterar a URL da API, você pode fazê-lo nas configurações da página.
-
-Caso deseje ter acesso ao código do front-end e modificá-lo acesse: [Front-end Plataforma de Receitas](https://github.com/dragaoinvisivel/frontend-plataforma-de-receitas) 
 
 ## Contribuindo
 
