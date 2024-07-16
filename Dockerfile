@@ -10,6 +10,6 @@ RUN pip install -r requirements.txt
 
 COPY src/ .
 
-EXPOSE 5050
+EXPOSE 9823
 
 CMD [ "python", "app.py" ]
