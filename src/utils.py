@@ -1,6 +1,7 @@
 import os
 from app import  db, Lesson
 from video_utils import get_video_duration_v1
+from app import db, Course
 
 def list_and_register_lessons(course_path, course_id):
     Lesson.query.filter_by(course_id=course_id).delete()
@@ -39,3 +40,27 @@ def list_and_register_lessons_in_directory(directory, course_id, hierarchy_prefi
             db.session.add(lesson)
 
     db.session.commit()
+
+def scan_data_directory_and_register_courses():
+    entries = list(os.scandir('/data'))
+
+    for entry in entries:
+        if entry.is_dir():
+            course = Course(
+                name=entry.name,
+                path=entry.path,
+                isCoverUrl=0,
+                fileCover=None,
+                urlCover=None
+            )
+
+            if course_already_exists(course):
+                return
+
+            db.session.add(course)
+            db.session.commit()
+
+            list_and_register_lessons_in_directory(course.path, course.id)
+
+def course_already_exists(course: Course):
+    return bool(len(Course.query.filter(Course.path == course.path).all()))

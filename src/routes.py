@@ -7,7 +7,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.orm import joinedload
 
 from app import app, db, Lesson, Course
-from utils import list_and_register_lessons
+from utils import list_and_register_lessons, scan_data_directory_and_register_courses
 from video_utils import open_video
 
 @app.route('/')
@@ -112,6 +112,13 @@ def add_course():
     list_and_register_lessons(request.form['path'], course.id)
 
     return jsonify({'id': course.id, 'name': course.name}), 201
+
+
+@app.route('/api/courses/add-all', methods=['POST'])
+def add_courses_automatically():
+    scan_data_directory_and_register_courses()
+    return jsonify({}), 201
+
 
 @app.route('/api/courses/<int:course_id>', methods=['GET'])
 def get_course(course_id):
